@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teej Special Offer – Ladies Beauty Parlour</title>
+  <style>
+    :root{
+      --bg1:#fff7eb; /* soft peach */
+      --bg2:#ffe4ec; /* light pink */
+      --primary:#9b2c2c; /* deep festive red */
+      --accent:#0f766e; /* teal */
+      --gold:#b8860b; /* golden */
+      --ink:#212121; /* text */
+      --card:#ffffff;
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at 10% 0%, var(--bg1), transparent 70%),
+                  radial-gradient(1200px 600px at 90% 20%, var(--bg2), transparent 70%),
+                  #fffaf5;
+    }
+    .wrapper{
+      max-width: 960px; margin: 24px auto; padding: 20px; 
+    }
+    .poster{
+      background:linear-gradient(180deg, #fffdf9, #fff8f1);
+      border-radius: 20px; box-shadow: var(--shadow);
+      padding: 28px; position: relative; overflow: hidden;
+    }
+    .ribbon{
+      position:absolute; inset:auto -60px 20px auto; transform: rotate(-12deg);
+      background: linear-gradient(90deg, #f43f5e, #fb923c);
+      color:white; padding: 10px 80px; font-weight:800; letter-spacing:.5px; text-transform:uppercase;
+      box-shadow: 0 8px 24px rgba(244,63,94,.35);
+    }
+    header{
+      text-align:center; padding: 6px 8px 18px; position: relative;
+    }
+    .brand{
+      display:inline-block; padding:.5rem 1rem; border:2px dashed var(--gold); color:var(--gold); font-weight:800; border-radius: 999px; font-size: .95rem; letter-spacing:.5px; background:#fffaf0;
+    }
+    h1{
+      margin: 12px 0 8px; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--primary);
+      line-height:1.1; text-transform:uppercase; letter-spacing:1px;
+    }
+    .subtitle{font-size: clamp(.95rem, 2.2vw, 1.1rem); opacity:.9}
+
+    .grid{
+      display:grid; gap: 14px; grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 6; background: var(--card); border-radius:16px; box-shadow: var(--shadow);
+      padding:16px 16px 18px; position:relative; overflow:hidden; border:1px solid #f0e8df;
+    }
+    @media (max-width:720px){ .card{ grid-column: span 12; } }
+    .card h3{ margin:6px 0 2px; font-size:1.15rem }
+    .price{ font-size:1.6rem; font-weight:900; color: var(--accent); }
+    .rupee{ font-size: .95rem; opacity:.9; margin-right:2px }
+    .tag{ position:absolute; top:12px; right:-6px; background:#16a34a; color:#fff; padding:6px 14px; font-weight:800; border-radius: 999px; box-shadow: 0 6px 16px rgba(22,163,74,.25); transform: rotate(6deg); text-transform: uppercase; letter-spacing:.6px; }
+    .gold-title{ color: var(--gold); font-weight:900; letter-spacing:.4px }
+    .diamond-title{ color:#1e293b; font-weight:900 }
+    .lotus{ font-size:.85rem; opacity:.85 }
+    .small{ font-size:.9rem; opacity:.9 }
+
+    .cta{
+      margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center;
+    }
+    .btn{
+      border:none; cursor:pointer; padding:12px 18px; border-radius:12px; font-weight:800; text-transform:uppercase; letter-spacing:.7px;
+      box-shadow: var(--shadow);
+    }
+    .btn.primary{ background: linear-gradient(90deg, #ef4444, #eab308); color:#fff; }
+    .btn.ghost{ background:#ffffff; border:2px solid #f1dfc8 }
+
+    footer{
+      margin-top:20px; text-align:center; font-size:.98rem; opacity:.9
+    }
+    .contact{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:8px }
+    .chip{ background:#fff; border:1px solid #f1e4d6; padding:8px 12px; border-radius:999px; box-shadow: var(--shadow) }
+
+    /* Print friendly (A4) */
+    @media print{
+      body{ background:white }
+      .wrapper{ max-width: 800px; margin:0; padding:0 }
+      .poster{ box-shadow:none; border:1px solid #e5e5e5 }
+      .btn, .chip{ box-shadow:none }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="poster">
+      <div class="ribbon">Pedicure FREE – Teej Special</div>
+      <header>
+        <span class="brand">Ladies Beauty Parlour</span>
+        <h1>Teej Special Offers</h1>
+        <div class="subtitle">Limited time festive deals • Walk‑in welcome</div>
+      </header>
+
+      <section class="grid" aria-label="Offers">
+        <!-- Gold Facial VLCC -->
+        <article class="card">
+          <span class="tag">Deal</span>
+          <h3 class="gold-title">Gold Facial <span class="small">(VLCC)</span></h3>
+          <div class="price"><span class="rupee">₹</span>999</div>
+        </article>
+
+        <!-- Papaya Facial -->
+        <article class="card">
+          <span class="tag" style="background:#f59e0b">Hot</span>
+          <h3>Papaya Facial</h3>
+          <div class="price"><span class="rupee">₹</span>699</div>
+        </article>
+
+        <!-- Fruit Facial + Bleach -->
+        <article class="card">
+          <span class="tag" style="background:#0ea5e9">Combo</span>
+          <h3>Fruit Facial &amp; Bleach</h3>
+          <div class="price"><span class="rupee">₹</span>499</div>
+        </article>
+
+        <!-- Diamond Facial (Lotus) -->
+        <article class="card">
+          <span class="tag" style="background:#111827">Premium</span>
+          <h3 class="diamond-title">Diamond Facial <span class="lotus">(Lotus)</span></h3>
+          <div class="price"><span class="rupee">₹</span>1000</div>
+        </article>
+
+        <!-- Free Hand Wax -->
+        <article class="card">
+          <span class="tag" style="background:#16a34a">FREE</span>
+          <h3>Hand Wax</h3>
+          <p class="small">Included with festival bookings</p>
+        </article>
+
+        <!-- Free Eyebrow + Haircut (Three Step) -->
+        <article class="card">
+          <span class="tag" style="background:#16a34a">FREE</span>
+          <h3>Eyebrow + Haircut <span class="small">(Three Step)</span></h3>
+          <p class="small">Complimentary styling</p>
+        </article>
+
+        <!-- Free Eyebrow + V Haircut -->
+        <article class="card">
+          <span class="tag" style="background:#16a34a">FREE</span>
+          <h3>Eyebrow + V Haircut</h3>
+          <p class="small">Festival special</p>
+        </article>
+
+        <!-- Pedicure FREE – already highlighted on ribbon but repeated for clarity -->
+        <article class="card">
+          <span class="tag" style="background:#16a34a">FREE</span>
+          <h3>Pedicure</h3>
+          <p class="small">Teej Special Offer</p>
+        </article>
+      </section>
+
+      <div class="cta">
+        <button class="btn primary">Book Now</button>
+        <button class="btn ghost">Walk‑In • 10 AM – 8 PM</button>
+      </div>
+
+      <footer>
+        <div>Call/WhatsApp: <strong>+91‑98XX‑XXXXXX</strong> • Near Your Landmark, Your City</div>
+        <div class="contact">
+          <span class="chip">Follow us: @yourparlour</span>
+          <span class="chip">Hygiene • AC • Expert Staff</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

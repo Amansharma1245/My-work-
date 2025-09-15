@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health & Wellness Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    input, button, select {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    .suggestion {
+      margin-top: 10px;
+      padding: 10px;
+      background: #eafaf1;
+      border-left: 5px solid #4caf50;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌿 Health & Wellness Hub 🌿</h1>
+    <p>Take care of your body and mind</p>
+  </header>
+
+  <!-- BMI Calculator -->
+  <section>
+    <h2>BMI Calculator</h2>
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" placeholder="Enter weight">
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" placeholder="Enter height">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div class="result" id="bmiResult"></div>
+    <div class="suggestion" id="bmiSuggestion"></div>
+  </section>
+
+  <!-- Mental Health Awareness -->
+  <section>
+    <h2>Mental Health Awareness</h2>
+    <p>Your mental health is as important as your physical health.  
+    Here are some tips for better mental well-being:</p>
+    <ul>
+      <li>🧘 Practice meditation or deep breathing</li>
+      <li>💬 Talk to friends or family when stressed</li>
+      <li>🏃‍♂️ Exercise regularly</li>
+      <li>😴 Get 7–8 hours of sleep</li>
+    </ul>
+  </section>
+
+  <!-- Well-being Tips -->
+  <section>
+    <h2>General Well-being Tips</h2>
+    <ul>
+      <li>🥗 Eat a balanced diet</li>
+      <li>🚰 Drink enough water</li>
+      <li>☀️ Spend time outdoors in fresh air</li>
+      <li>📚 Keep learning and stay positive</li>
+    </ul>
+  </section>
+
+  <!-- Disease Information -->
+  <section>
+    <h2>Disease Information & Cures</h2>
+    <label for="disease">Select a disease:</label>
+    <select id="disease" onchange="showCure()">
+      <option value="">--Choose an illness--</option>
+      <option value="malaria">Malaria</option>
+      <option value="dengue">Dengue</option>
+      <option value="flu">Flu</option>  
+      <option value="covid">COVID-19</option>
+    </select>
+    <div class="result" id="diseaseInfo"></div>
+  </section>
+
+  <script>
+    // BMI Calculator with Suggestions
+    function calculateBMI() {
+      let weight = document.getElementById("weight").value;
+      let height = document.getElementById("height").value;
+
+      if (weight && height) {
+        let bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+        let category = "";
+        let suggestion = "";
+
+        if (bmi < 18.5) {
+          category = "Underweight 😕";
+          suggestion = "✅ Eat more protein-rich & calorie-dense foods (milk, nuts, eggs, rice). " +
+                       "✅ Exercise with strength training to build muscle.";
+        } else if (bmi < 24.9) {
+          category = "Normal 😊";
+          suggestion = "✅ Maintain your healthy diet. ✅ Continue exercising & sleeping well to stay fit!";
+        } else if (bmi < 29.9) {
+          category = "Overweight 😐";
+          suggestion = "✅ Reduce junk food & sugary drinks. ✅ Include more vegetables, fruits, and whole grains. " +
+                       "✅ Regular cardio like jogging, cycling, or swimming will help.";
+        } else {
+          category = "Obese 😟";
+          suggestion = "⚠️ Consult a doctor or nutritionist. ✅ Focus on portion control and balanced meals. " +
+                       "✅ Increase daily activity with light exercises like walking.";
+        }
+
+        document.getElementById("bmiResult").innerText = `Your BMI is ${bmi} (${category})`;
+        document.getElementById("bmiSuggestion").innerText = suggestion;
+      } else {
+        document.getElementById("bmiResult").innerText = "⚠️ Please enter valid weight and height.";
+        document.getElementById("bmiSuggestion").innerText = "";
+      }
+    }
+
+    // Disease Info
+    function showCure() {
+      let disease = document.getElementById("disease").value;
+      let info = "";
+
+      if (disease === "malaria") {
+        info = "🦟 Malaria: Caused by mosquito bites. Cure: Antimalarial drugs (chloroquine, artemisinin). Prevent by using mosquito nets.";
+      } else if (disease === "dengue") {
+        info = "🦟 Dengue: Spread by Aedes mosquitoes. Cure: No specific medicine, but hydration, rest, and paracetamol help. Avoid aspirin/ibuprofen.";
+      } else if (disease === "flu") {
+        info = "🤧 Flu: Viral infection. Cure: Rest, fluids, antiviral medicines (if prescribed). Get annual flu vaccine.";
+      } else if (disease === "covid") {
+        info = "🦠 COVID-19: Viral respiratory disease. Cure: Isolation, supportive care, antivirals (if severe). Vaccination prevents severe cases.";
+      }
+
+      document.getElementById("diseaseInfo").innerText = info;
+    }
+  </script>
+</body>
+</html>
