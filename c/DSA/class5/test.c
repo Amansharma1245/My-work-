@@ -1,55 +1,36 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
+int *cqueue;
+int front=-1 ;
+int rear=-1;
+int capacity=2;
+int size=0;
+void enqueue(int x){
+    if(size==capacity){
+        capacity=capacity*2;
+        cqueue=(int *)realloc(cqueue,capacity*sizeof(int ));
 
-int *queue;
-int front = 0;       // index of first element
-int rear = -1;       // index of last element
-int capacity = 2;    // initial capacity
-int size = 0;        // number of elements
-
-void enqueue(int x) {
-    if (size == capacity) {
-        capacity *= 2;
-        queue = (int*)realloc(queue, capacity * sizeof(int));
-        if (queue == NULL) {
-            printf("Memory allocation failed\n");
-            exit(1);
-        }
     }
-    rear++;
-    queue[rear] = x;
-    size++;
-}
-
-void dequeue() {
-    if (size == 0) {
-        printf("Underflow\n");
-        return;
+    if(front==-1 && rear==-1){
+        front++;
+        rear++;
+        size++;
+        cqueue[rear]=x;
     }
-    front++;
-    size--;
-    if (size == 0) { // reset queue to initial state
-        front = 0;
-        rear = -1;
+    else {
+        rear=(rear+1)%capacity;
+        cqueue[rear]=x;
+
     }
 }
-
-void display() {
-    if (size == 0) {
-        printf("Queue is empty\n");
-        return;
+void display (){
+    if(front==-1 && rear==-1){
+        printf("Queue is empty ");
     }
-    for (int i = front; i <= rear; i++) {
-        printf("%d ", queue[i]);
+    else {
+        while()
     }
-    printf("\n");
 }
-
-int main() {
-    queue = (int*)malloc(capacity * sizeof(int));
-
-    enqueue(3);
-    dequeue();
-    free(queue);
-    return 0;
+int main (){
+    cqueue=(int *)malloc(sizeof(int ));
 }
