@@ -23,4 +23,4 @@ int main()
             bag.insert(*it/2);
     }
     cout<<totalcandy;
-}
+} 

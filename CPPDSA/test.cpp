@@ -2,25 +2,13 @@
 using namespace std;
 int main()
 {
-    int n;
-    cout<<"Enter the no of bags";
-    cin>>n;
-    int k;
-    cout<<"Enter the time in min ";
-    cin>>k;
-    multiset<int>bag;
-    for(int i=0; i<n; i++){
-        int candy ;
-        cout<<"Enter the number of candy"<<endl;
-        cin>>candy;
-        bag.insert(candy);
+    pair<int,string>p[4];
+    p[0]={2,"a"};
+    p[1]={6,"b"};
+    p[2]={5,"c"};
+    p[3]={6,"d"};
+    for(auto it : p){
+        cout<<
+
     }
-    int totalcandy=0;
-    for(int i=0; i<k; i++){
-            auto it =(--bag.end());
-            totalcandy=totalcandy+(*it);
-            bag.erase(it);
-            bag.insert(*it/2);
-    }
-    cout<<totalcandy;
 }
